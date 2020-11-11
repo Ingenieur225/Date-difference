@@ -1,0 +1,9 @@
+// DIFFERENCE ENTRE LES DATES
+$end_date =  $date_expiration->date_expiration;
+$now = $date_achat->updated_at;
+
+$diff = strtotime($end_date) - strtotime($now);
+$fullDays    = floor($diff / (60 * 60 * 24));   
+$fullHours   = floor(($diff - ($fullDays * 60 * 60 * 24)) / (60 * 60));   
+$fullMinutes = floor(($diff - ($fullDays * 60 * 60 * 24) - ($fullHours * 60 * 60)) / 60);      
+return "Difference is $fullDays days, $fullHours hours and $fullMinutes minutes.";
